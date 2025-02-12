@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.example.dress_den.presentation.home.HomeFragment"
+        android:label="@string/nav_home">
+        <action
+            android:id="@+id/action_home_to_product_detail"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_categories"
+        android:name="com.example.dress_den.presentation.categories.CategoriesFragment"
+        android:label="@string/nav_categories">
+        <action
+            android:id="@+id/action_categories_to_product_list"
+            app:destination="@id/productListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.example.dress_den.presentation.cart.CartFragment"
+        android:label="@string/nav_cart">
+        <action
+            android:id="@+id/action_cart_to_checkout"
+            app:destination="@id/checkoutFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_wishlist"
+        android:name="com.example.dress_den.presentation.wishlist.WishlistFragment"
+        android:label="@string/nav_wishlist">
+        <action
+            android:id="@+id/action_wishlist_to_product_detail"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.dress_den.presentation.profile.ProfileFragment"
+        android:label="@string/nav_profile">
+        <action
+            android:id="@+id/action_profile_to_edit_profile"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_profile_to_orders"
+            app:destination="@id/ordersFragment" />
+        <action
+            android:id="@+id/action_profile_to_settings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <!-- Additional Destinations -->
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.example.dress_den.presentation.product.ProductDetailFragment"
+        android:label="@string/product_details">
+        <argument
+            android:name="productId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.example.dress_den.presentation.product.ProductListFragment"
+        android:label="Products">
+        <argument
+            android:name="categoryId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.example.dress_den.presentation.checkout.CheckoutFragment"
+        android:label="@string/checkout" />
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.dress_den.presentation.profile.EditProfileFragment"
+        android:label="@string/edit_profile" />
+
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.example.dress_den.presentation.orders.OrdersFragment"
+        android:label="@string/my_orders" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.dress_den.presentation.settings.SettingsFragment"
+        android:label="@string/nav_settings" />
+
+</navigation>
